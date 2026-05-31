@@ -1,0 +1,658 @@
+/* ============================================================
+   gcUserStudies static site - shared stylesheet
+   Two pages share this file:
+     body.theme-current  -> teal accent  (Current studies)
+     body.theme-legacy   -> purple accent (Legacy / open source)
+   The accent palette is the only thing that changes between
+   pages; everything else is a shared dark base.
+   ============================================================ */
+
+/* ---------- Reset / base ---------- */
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text);
+  background: var(--page-bg);
+  background-attachment: fixed;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+img { max-width: 100%; }
+
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+h1, h2, h3, h4 { line-height: 1.25; font-weight: 600; }
+
+/* ---------- Shared dark base tokens ---------- */
+:root {
+  --header-bg: #0a1118;
+  --surface: #16202c;
+  --surface-2: #1e2d3d;
+  --surface-3: #151f2b;
+  --border: #2a3a4a;
+  --text: #e6edf3;
+  --text-dim: #a7b6c6;
+  --text-muted: #8a9db0;
+  --radius: 6px;
+  --maxw: 1200px;
+}
+
+/* ---------- Current page: teal on dark ---------- */
+body.theme-current {
+  --accent: #3ec6c6;
+  --accent-strong: #57dada;
+  --accent-soft: rgba(62, 198, 198, 0.15);
+  --page-bg: radial-gradient(1200px 600px at 50% -10%, #16303a 0%, #0e1620 55%, #0b1118 100%);
+}
+
+/* ---------- Legacy page: purple / magenta ---------- */
+body.theme-legacy {
+  --accent: #c264d4;
+  --accent-strong: #d77ce6;
+  --accent-soft: rgba(194, 100, 212, 0.16);
+  /* The original site used this geometric purple image as a fixed
+     full-bleed background; carry it over for the legacy identity. */
+  --page-bg:
+    linear-gradient(rgba(10, 6, 14, 0.82), rgba(10, 6, 14, 0.9)),
+    url("assets/legacy-bg.jpg") center center / cover no-repeat fixed;
+}
+
+/* ============================================================
+   Header (shared on every page)
+   ============================================================ */
+.site-header {
+  background: var(--header-bg);
+  border-bottom: 1px solid var(--border);
+}
+
+.header-inner {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 16px 20px 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+/* Left identity: legacy guitar logo + wordmark */
+.brand-legacy {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--text);
+}
+.brand-legacy:hover { text-decoration: none; }
+.brand-legacy img {
+  height: 42px;
+  width: auto;
+  border-radius: 4px;
+  display: block;
+}
+.brand-legacy span {
+  font-size: 1.15rem;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+}
+
+/* Right identity: gcUserStudies logo, rendered at true brand color
+   on both pages (never recolored to a page theme). */
+.brand-current { display: flex; align-items: center; }
+.brand-current:hover { text-decoration: none; }
+.brand-current img {
+  height: 50px;
+  width: auto;
+  display: block;
+}
+
+/* Nav row beneath the logos */
+.site-nav {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+.nav-inner {
+  display: flex;
+  gap: 28px;
+  border-top: 1px solid rgba(255, 255, 255, 0.04);
+  padding-top: 4px;
+}
+.nav-link {
+  display: inline-block;
+  padding: 10px 0;
+  color: var(--text-dim);
+  font-size: 0.98rem;
+  font-weight: 500;
+  border-bottom: 3px solid transparent;
+}
+.nav-link:hover { color: var(--text); text-decoration: none; }
+.nav-link.is-active {
+  color: #fff;
+  border-bottom-color: var(--accent);
+}
+
+/* ============================================================
+   Page heading band (explicit "where am I" label)
+   ============================================================ */
+.page-head {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 34px 20px 10px;
+}
+.page-head h1 {
+  margin: 0 0 6px;
+  font-size: 2rem;
+  color: #fff;
+}
+.page-head .page-head-accent { color: var(--accent); }
+.page-head p {
+  margin: 0;
+  color: var(--text-dim);
+  max-width: 70ch;
+}
+
+/* Main content wrapper */
+main {
+  flex: 1 0 auto;
+  width: 100%;
+}
+.wrap {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* ============================================================
+   Card gallery (current studies page)
+   Ported from the WordPress gallery CSS, converted to use
+   native <details> elements so no script drives the expand.
+   ============================================================ */
+.gc-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  max-width: var(--maxw);
+  margin: 8px auto 0;
+  padding: 0 20px;
+}
+@media (max-width: 900px) {
+  .gc-gallery { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 560px) {
+  .gc-gallery { grid-template-columns: 1fr; padding: 0 12px; }
+  .section-head, .section-head-row { padding-left: 12px; padding-right: 12px; }
+}
+
+/* Section headings on the current studies page (Studies vs Free bundle) */
+.section-head {
+  max-width: var(--maxw);
+  margin: 26px auto 6px;
+  padding: 0 20px;
+  font-size: 1.4rem;
+  color: #fff;
+}
+.section-head-row {
+  max-width: var(--maxw);
+  margin: 40px auto 6px;
+  padding: 0 20px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 12px 24px;
+  flex-wrap: wrap;
+}
+.section-head-row .section-head { margin: 0; padding: 0; max-width: none; }
+.section-head-row .section-sub {
+  margin: 4px 0 0;
+  color: var(--text-dim);
+  font-size: 0.92rem;
+  max-width: 60ch;
+}
+.gc-dl-lg { padding: 10px 18px; font-size: 0.9rem; }
+/* Bundle cards have no individual download, so title and toggle share one row */
+.gc-gallery--bundle .gc-card-title { flex: 1 1 auto; }
+
+/* Each card is a <details>. Collapsed = one grid cell.
+   Open = spans the full row (grid-column: 1 / -1). */
+.gc-card {
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: border-color 0.2s ease, transform 0.15s ease;
+  align-self: start;
+}
+.gc-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+.gc-card[open] {
+  grid-column: 1 / -1;
+  border-color: var(--accent);
+  transform: none;
+}
+
+/* The summary is the clickable card face. Strip native marker. */
+.gc-card > summary {
+  list-style: none;
+  cursor: pointer;
+  display: block;
+}
+.gc-card > summary::-webkit-details-marker { display: none; }
+.gc-card > summary::marker { content: ""; }
+
+/* Thumbnail (collapsed state only) */
+.gc-card-thumb {
+  height: 220px;
+  background: var(--surface-3);
+  overflow: hidden;
+}
+.gc-card-thumb img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  /* Frame the middle of each screenshot, where the key feature sits
+     (bracket label, colored tails, large-order highlight, FVG boxes).
+     Cropping to the top showed only the sparse top of a price ladder. */
+  object-position: center;
+  display: block;
+  opacity: 0.88;
+  transition: opacity 0.2s ease;
+}
+.gc-card:hover .gc-card-thumb img { opacity: 1; }
+.gc-card[open] .gc-card-thumb { display: none; }
+
+/* Info / action bar inside the summary.
+   Two rows: the title gets its own line (so multi-word names do not
+   collide with the buttons), then the download + toggle row. */
+.gc-card-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 12px;
+  padding: 12px 16px;
+}
+.gc-card-title {
+  flex: 1 0 100%;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text);
+  min-width: 0;
+}
+.gc-card[open] .gc-card-title { color: #fff; font-size: 1.2rem; }
+.gc-card-toggle { margin-left: auto; }
+
+/* Toggle hint ("Details" / "Close" + arrow) */
+.gc-card-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--accent);
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  white-space: nowrap;
+}
+.gc-card-toggle::before { content: "Details"; }
+.gc-card[open] .gc-card-toggle::before { content: "Close"; }
+.gc-card-arrow {
+  font-size: 0.7rem;
+  transition: transform 0.25s ease;
+}
+.gc-card[open] .gc-card-arrow { transform: rotate(180deg); }
+
+/* ---------- Download button (co-located on every card) ---------- */
+.gc-dl {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 14px;
+  border: 1px solid var(--accent);
+  border-radius: 4px;
+  color: var(--accent);
+  font-size: 0.82rem;
+  font-weight: 600;
+  white-space: nowrap;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+.gc-dl:hover {
+  background: var(--accent);
+  color: #05222a;
+  text-decoration: none;
+}
+.gc-dl .dl-arrow { font-size: 0.9em; line-height: 1; }
+
+/* ============================================================
+   Detail panel (revealed when a card is open)
+   ============================================================ */
+.gc-detail {
+  border-top: 1px solid var(--border);
+  background: var(--surface);
+}
+.gc-detail-inner {
+  display: flex;
+  gap: 30px;
+  padding: 26px 30px;
+  align-items: flex-start;
+}
+@media (max-width: 760px) {
+  .gc-detail-inner { flex-direction: column; padding: 20px; }
+}
+
+.gc-detail-media {
+  flex: 0 0 44%;
+  max-width: 44%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+@media (max-width: 760px) {
+  .gc-detail-media { flex: none; max-width: 100%; width: 100%; }
+}
+.gc-detail-screenshot {
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  overflow: hidden;
+  background: #0e1620;
+}
+.gc-detail-screenshot img { width: 100%; height: auto; display: block; }
+
+/* Strip of additional screenshots under the primary one */
+.gc-detail-extra {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+/* Cap by max width and height with auto sizing, so extra screenshots keep
+   their aspect ratio and never blow up (e.g. the thin delta meter) or
+   shrink to an unreadable sliver. */
+.gc-detail-extra img {
+  max-width: calc(50% - 4px);
+  max-height: 220px;
+  width: auto;
+  height: auto;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  background: #0e1620;
+  display: block;
+}
+
+.gc-detail-content { flex: 1; min-width: 0; }
+.gc-detail-desc {
+  margin: 0 0 16px;
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: var(--text-dim);
+}
+.gc-detail-features-heading {
+  margin: 0 0 8px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.gc-detail-features { list-style: none; padding: 0; margin: 0 0 4px; }
+.gc-detail-features li {
+  position: relative;
+  padding: 4px 0 4px 18px;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--text-muted);
+}
+.gc-detail-features li::before {
+  content: "\2022";
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+}
+
+/* ---------- Small note under a study detail (e.g. shared bundle DLL) ---------- */
+.gc-detail-note {
+  margin: 14px 0 0;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+  font-size: 0.8rem;
+  font-style: italic;
+  color: var(--text-muted);
+}
+/* Stacked notes (e.g. acknowledgment followed by bundle note): only the
+   first carries the divider. */
+.gc-detail-note + .gc-detail-note {
+  border-top: none;
+  padding-top: 0;
+  margin-top: 8px;
+}
+.gc-detail-note a { font-style: normal; }
+
+/* ============================================================
+   Disclaimer / note blocks
+   ============================================================ */
+/* Link to older / version-specific builds (points at the GitHub releases page) */
+.versions-note {
+  max-width: var(--maxw);
+  margin: 26px auto 0;
+  padding: 0 20px;
+  font-size: 0.88rem;
+  color: var(--text-muted);
+}
+
+.disclaimer {
+  max-width: var(--maxw);
+  margin: 18px auto 0;
+  padding: 14px 20px;
+}
+.disclaimer p {
+  margin: 0 auto;
+  max-width: 90ch;
+  padding: 14px 18px;
+  font-size: 0.86rem;
+  line-height: 1.6;
+  color: var(--text-muted);
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
+  border-radius: 4px;
+}
+
+/* ============================================================
+   Legacy page content (carried from the original site)
+   ============================================================ */
+.legacy-toc {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 18px;
+  margin: 0 0 24px;
+  padding: 14px 18px;
+  background: rgba(0, 0, 0, 0.55);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+.legacy-toc a { font-size: 0.92rem; font-weight: 500; }
+
+.legacy-section {
+  margin: 0 0 22px;
+  padding: 22px 26px;
+  background: rgba(0, 0, 0, 0.62);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+.legacy-section h2 {
+  margin: 0 0 6px;
+  font-size: 1.5rem;
+  color: #fff;
+  scroll-margin-top: 20px;
+}
+.legacy-section h2 .sec-accent { color: var(--accent); }
+.legacy-study { margin: 0 0 18px; }
+.legacy-study:last-child { margin-bottom: 0; }
+.legacy-study h3 {
+  margin: 0 0 4px;
+  font-size: 1.1rem;
+  color: var(--accent-strong);
+}
+.legacy-study p { margin: 0 0 8px; color: var(--text-dim); }
+.legacy-study ul { margin: 0 0 8px; padding-left: 20px; color: var(--text-muted); }
+.legacy-study li { margin: 2px 0; }
+.legacy-hr { border: 0; border-top: 1px solid var(--border); margin: 18px 0; }
+
+/* Tag for studies that also appear on the current page */
+.legacy-tag {
+  display: inline-block;
+  margin-left: 8px;
+  padding: 2px 8px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  vertical-align: middle;
+  color: var(--accent);
+  border: 1px solid var(--accent);
+  border-radius: 999px;
+}
+
+/* Version history entries */
+.version-entry {
+  margin: 0 0 16px;
+  padding: 14px 16px;
+  background: rgba(255, 255, 255, 0.025);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+}
+.version-entry.is-current { border-left: 3px solid var(--accent); }
+.version-entry h3 { margin: 0 0 8px; font-size: 1rem; color: #fff; }
+.version-entry .ver-badge {
+  display: inline-block;
+  margin-left: 8px;
+  padding: 1px 8px;
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #05222a;
+  background: var(--accent);
+  border-radius: 999px;
+}
+.version-entry ul { margin: 0; padding-left: 18px; }
+.version-entry li { margin: 4px 0; color: var(--text-dim); font-size: 0.9rem; }
+
+.legacy-section .meta-note {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+/* Footnote marker and fine print (e.g. the paid-services aside) */
+.footnote-marker {
+  color: var(--accent);
+  font-weight: 700;
+}
+.fine-print {
+  margin: 16px 0 0;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+  font-size: 0.82rem;
+  font-style: italic;
+  color: var(--text-muted);
+}
+.fine-print a { font-style: normal; }
+
+.chartbook-shot {
+  margin-top: 12px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  max-width: 100%;
+}
+
+/* ============================================================
+   Simple content pages (about / faq)
+   ============================================================ */
+.doc {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 10px 20px 30px;
+}
+.doc h2 {
+  margin: 26px 0 8px;
+  font-size: 1.25rem;
+  color: #fff;
+}
+.doc h2:first-child { margin-top: 8px; }
+.doc p { color: var(--text-dim); }
+.doc ol, .doc ul { color: var(--text-dim); padding-left: 22px; }
+.doc li { margin: 6px 0; }
+.faq-q {
+  margin: 30px 0 8px;
+  padding-top: 22px;
+  border-top: 1px solid var(--border);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--accent-strong);
+}
+.faq-q:first-of-type {
+  margin-top: 6px;
+  padding-top: 0;
+  border-top: none;
+}
+
+/* ============================================================
+   Footer (shared on every page)
+   ============================================================ */
+.site-footer {
+  flex-shrink: 0;
+  margin-top: 40px;
+  background: var(--header-bg);
+  border-top: 1px solid var(--border);
+}
+.footer-inner {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 18px 20px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+.footer-inner .risk {
+  margin: 0;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  max-width: 70ch;
+}
+.footer-links { display: flex; gap: 20px; }
+.footer-links a { font-size: 0.85rem; font-weight: 500; color: var(--text-dim); }
+.footer-links a:hover { color: var(--accent); }
+.footer-copyright {
+  margin: 0;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+/* Footer bottom row: copyright on the left, social icons on the right */
+.footer-bottom {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 20px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+/* Social icon links (header nav and footer) */
+.social-links { display: inline-flex; align-items: center; gap: 14px; }
+.social-links a { display: inline-flex; color: var(--text-dim); }
+.social-links a:hover { color: var(--accent); }
+.social-links svg { width: 18px; height: 18px; fill: currentColor; display: block; }
+.nav-inner .social-links { margin-left: auto; }

@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Legacy open-source studies - gcUserStudies</title>
+  <meta name="description" content="The original free, open-source Sierra Chart custom studies, distributed as a single DLL with source code.">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="stylesheet" href="styles.css?v=12">
+</head>
+<body class="theme-legacy">
+
+  <!-- ===== Shared header ===== -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand-legacy" href="legacy.html" title="Legacy / open source studies">
+        <img src="assets/legacy-guitar.jpg" alt="">
+        <span>Sierra Chart Studies</span>
+      </a>
+      <a class="brand-current" href="index.html" title="Current studies">
+        <img src="assets/gcuserstudies-logo.png" alt="gcUserStudies">
+      </a>
+    </div>
+    <nav class="site-nav">
+      <div class="nav-inner">
+        <a href="legacy.html" class="nav-link is-active">Legacy / open source</a>
+        <a href="index.html" class="nav-link">Current studies</a>
+        <span class="social-links">
+          <a href="https://x.com/gcUserStudies" target="_blank" rel="noopener" aria-label="X"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+          <a href="https://www.youtube.com/@gcUserStudies" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12z"/></svg></a>
+        </span>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <div class="page-head">
+      <h1>Legacy <span class="page-head-accent">open-source</span> studies</h1>
+      <p>The original collection of free, open-source Sierra Chart custom studies. All studies ship in a single DLL, with full source code available. Some of these have newer closed-source counterparts on the Current studies page.</p>
+    </div>
+
+    <div class="wrap">
+
+      <!-- Jump links -->
+      <nav class="legacy-toc">
+        <a href="#studies">Studies</a>
+        <a href="#download">Download</a>
+        <a href="#install">Install</a>
+        <a href="#chartbooks">Chartbooks</a>
+        <a href="#about">About</a>
+        <a href="#references">References</a>
+        <a href="#contact">Contact</a>
+        <a href="#paid">Paid services</a>
+      </nav>
+
+      <!-- ===== Studies ===== -->
+      <section class="legacy-section" id="studies">
+        <h2><span class="sec-accent">#</span> Studies</h2>
+
+        <div class="legacy-study">
+          <h3>DOM: Auto Clear Recent Bid/Ask Volume <span class="legacy-tag">Older open-source version</span></h3>
+          <p>Automatically clears the Recent Bid/Ask Volume for the symbol of the chart at specified session times. Option to also include Current Traded Bid/Ask Volume when auto clearing. Up to six individual sessions can be configured.</p>
+        </div>
+        <hr class="legacy-hr">
+
+        <div class="legacy-study">
+          <h3>Fair Value Gap Study (FVG) <span class="legacy-tag">Older open-source version</span></h3>
+          <p>Finds Fair Value Gaps for the given chart and draws them based on configured parameters in the Study Settings.</p>
+          <p>Main features:</p>
+          <ul>
+            <li>Independent settings for Up and Down Gaps</li>
+            <li>Extend until Gap filled</li>
+            <li>Minimum Gap size in ticks for FVGs</li>
+            <li>Minimum Gap size in ticks for FVG Subgraphs</li>
+            <li>Allow copying to other chart drawings</li>
+            <li>Enable or disable FVG Up and Down gaps</li>
+            <li>Hide Gaps once filled</li>
+            <li>Specify maximum lookback for bars to process</li>
+            <li>Draw Midline</li>
+            <li>Subgraphs for FVG Count</li>
+            <li>Subgraphs for High and Low of FVG Up/Down, intended for trailing stops and/or targets with a trade management study. The Subgraphs shift based on open FVGs. Once an FVG is closed the Subgraph shifts to the new one. Best understood by setting the drawstyle for all subgraphs to dash or line and watching how it works. Test on Sim first.</li>
+            <li>Option to use additional study data to determine whether the candle that creates the FVG (middle candle) should be used. For example, a formula could check whether volume meets a threshold and output a non-zero value for true; if met, draw the FVG, otherwise ignore that candle.</li>
+          </ul>
+        </div>
+        <hr class="legacy-hr">
+
+        <div class="legacy-study">
+          <h3>Forex Factory <span class="legacy-tag">Older open-source version</span></h3>
+          <p>Downloads the week's Forex events from <a href="https://www.forexfactory.com/" rel="nofollow noopener" target="_blank">Forex Factory</a> and displays them on your chart. Important: "Use OpenGL for Chart Graphics" must be disabled for this study to work. <a href="https://www.sierrachart.com/SupportBoard.php?PostID=225735#P225735" rel="noopener" target="_blank">According to Sierra Chart</a>, OpenGL is not supported for ACSIL and is not currently planned. If you require OpenGL, a workaround is to run multiple instances of Sierra Chart and disable OpenGL on just the instance for this study.</p>
+          <p>Main features:</p>
+          <ul>
+            <li>Filter by all currencies (countries)</li>
+            <li>Filter by Expected Impact</li>
+            <li>Alerts via Subgraphs to color candles 10m before event</li>
+            <li>Alerts via Subgraphs to color candles at time of event (alert active for 1 minute)</li>
+            <li>Hide previous events</li>
+            <li>Show tomorrow's events</li>
+            <li>Show tomorrow's events only after a specified time</li>
+            <li>Adjust color settings independently for past, upcoming, and current events</li>
+            <li>Uses Forex Factory default colors for Event Impact markers</li>
+            <li>Adjust font size</li>
+            <li>Adjust horizontal and vertical offset</li>
+            <li>Adjust event spacing</li>
+          </ul>
+        </div>
+        <hr class="legacy-hr">
+
+        <div class="legacy-study">
+          <h3>RSI</h3>
+          <p>A modification of the stock RSI to include additional reference lines. For example:</p>
+          <ul>
+            <li>A 70/30 set of lines</li>
+            <li>And also an 80/20 set of lines</li>
+          </ul>
+        </div>
+        <hr class="legacy-hr">
+
+        <div class="legacy-study">
+          <h3>Trading System Based on Alert Condition - Limit Order</h3>
+          <p>A modification of the included "Trading System Based On Alert Condition" study that ships with Sierra Chart.</p>
+          <p>Main features:</p>
+          <ul>
+            <li>Option to use limit orders instead of market orders</li>
+            <li>Auto cancel orders if not filled within x bars</li>
+          </ul>
+        </div>
+        <hr class="legacy-hr">
+
+        <div class="legacy-study">
+          <h3>No Mo Paper Hands</h3>
+          <p>A "for fun" study with issues of its own. The idea: if you continually close trades too early, maybe you need a reminder not to, so you can load this study and it will continually lock trading when you have active positions. The catch is that you can always remove the study and unlock trading again to bail. One issue was with non Teton order routing (client side vs server side). The client side issues appear fixed by cancel/flatten all orders if you are stopped or your profit target is hit, otherwise you run into the problems discussed in <a href="https://www.sierrachart.com/SupportBoard.php?ThreadID=73330" rel="nofollow noopener" target="_blank">this thread</a>.</p>
+        </div>
+        <hr class="legacy-hr">
+
+        <div class="legacy-study">
+          <h3>Rango Pinch</h3>
+          <p>A Pinch study based on MACD/ADX pinch-release. To visually see pinches and releases, add a MACD and ADX study to your chart and take a look. Try it on a 512t chart and a 1m chart. Some people put it on multiple time frame, tick, or volume charts and look at the confluence between pinches forming and releasing. Written mainly as an exercise in learning Sierra Chart studies, named after a Bearded Dragon.</p>
+        </div>
+        <hr class="legacy-hr">
+
+        <div class="legacy-study">
+          <h3>Output Bar Formula Value To Subgraph</h3>
+          <p>Takes the result of the given formula and places the output in a subgraph. Written as a helper study to avoid using Spreadsheets to perform the same function.</p>
+        </div>
+        <hr class="legacy-hr">
+
+        <div class="legacy-study">
+          <h3>Account Balance Text - External Service</h3>
+          <p>A modification of the existing study shipped with Sierra Chart. If using a prop-style firm, they may not update cash balance until the next day. You may also want to specify an account other than the one the chart is set to use, for example to list available funds on each of several prop accounts. Add a study for each account and specify the account name.</p>
+          <p>Main features:</p>
+          <ul>
+            <li>Option to show Cash Balance vs Available Funds Balance</li>
+            <li>Option to prefix balance with Account Name</li>
+            <li>Option to manually specify the account to use</li>
+          </ul>
+        </div>
+        <hr class="legacy-hr">
+
+        <div class="legacy-study">
+          <h3>MBO Study <span class="legacy-tag">Older open-source version</span></h3>
+          <p>MBO study for filtering and coloring lot sizes.</p>
+          <p>Main features:</p>
+          <ul>
+            <li>Option to select which DOM columns to use (Label/GP1/GP2) for Bid and Ask data</li>
+            <li>Several color ranges to use for filtering lot sizes</li>
+            <li>Front of queue marker to easily see where the front of the line is</li>
+            <li>Select how many MBO Levels to display</li>
+            <li>For each MBO Level, select how many elements to display</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ===== Download / version history ===== -->
+      <section class="legacy-section" id="download">
+        <h2><span class="sec-accent">#</span> Download</h2>
+        <p>All studies are contained in a single DLL file. You are free to download the source code and compile it yourself. Note that Remote Builds will not work properly, as some studies require external header files (included in the GitHub repo), so you will need a local compiler.</p>
+        <p class="meta-note">Since you are downloading a DLL file, you may get a warning that it is a potentially malicious file. That is a good thing; you should be cautious downloading files of this type. By all means, paste the download link into <a href="https://www.virustotal.com/gui/home/url" rel="noopener" target="_blank">VirusTotal</a> to have it scanned, or review the report already run on each version below.</p>
+
+        <div class="version-entry is-current">
+          <h3>Study Collection Version 2499 <span class="ver-badge">Latest</span></h3>
+          <ul>
+            <li>Minimum required Sierra Chart version: 2414</li>
+            <li>Main changes: Added MBO Study. No issues with VirusTotal.</li>
+            <li><a href="https://github.com/gcUserStudies/sierrachart/raw/main/bin/2499/gcUserStudies_2499_64.dll" download>Download gcUserStudies_2499_64.dll</a></li>
+            <li><a href="https://github.com/gcUserStudies/sierrachart" rel="noopener" target="_blank">Source code</a></li>
+            <li><a href="https://www.virustotal.com/gui/file/80d307342de122107c4198f013bf54e182fe0154babc4742c1453301cef81f1e?nocache=1" rel="noopener" target="_blank">VirusTotal report</a></li>
+          </ul>
+        </div>
+
+        <div class="version-entry">
+          <h3>Study Collection Version 2497</h3>
+          <ul>
+            <li>Minimum required Sierra Chart version: 2414</li>
+            <li>Note: VirusTotal flagged one item for this version. Assumed to be a false positive.</li>
+            <li><a href="https://github.com/gcUserStudies/sierrachart/raw/main/bin/2497/gcUserStudies_2497_64.dll" download>Download gcUserStudies_2497_64.dll</a></li>
+            <li><a href="https://github.com/gcUserStudies/sierrachart" rel="noopener" target="_blank">Source code</a></li>
+            <li><a href="https://www.virustotal.com/gui/file/04fe92ff3817e5af9f14e4f74158294fd78919d21580a1eddb007acc22fc0794?nocache=1" rel="noopener" target="_blank">VirusTotal report</a></li>
+          </ul>
+        </div>
+
+        <div class="version-entry">
+          <h3>Study Collection Version 2496</h3>
+          <ul>
+            <li>Minimum required Sierra Chart version: 2414</li>
+            <li><a href="https://github.com/gcUserStudies/sierrachart/raw/main/bin/2496/gcUserStudies_2496_64.dll" download>Download gcUserStudies_2496_64.dll</a></li>
+            <li><a href="https://github.com/gcUserStudies/sierrachart" rel="noopener" target="_blank">Source code</a></li>
+            <li><a href="https://www.virustotal.com/gui/file/1c109144153fc4da1faf8b2f2231a38fe4a2aff807794ce0de4f31f6bfbde36a?nocache=1" rel="noopener" target="_blank">VirusTotal report</a></li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ===== Install ===== -->
+      <section class="legacy-section" id="install">
+        <h2><span class="sec-accent">#</span> Install</h2>
+        <div class="legacy-study">
+          <h3>Study Collection DLL</h3>
+          <ul>
+            <li>Download the DLL file and copy it to your Sierra Chart "Data" folder</li>
+            <li>Example folder location for a default C drive install: C:\SierraChart\Data</li>
+            <li>Go to Analysis &gt; Studies (or F6), then Add Custom Study, and select the study you wish to add</li>
+            <li>If you have a previous version installed, you may need to remove it and re-add it so all new settings are refreshed</li>
+          </ul>
+        </div>
+        <div class="legacy-study">
+          <h3>Chartbooks</h3>
+          <ul>
+            <li>Download the Chartbook file and copy it to your Sierra Chart "Data" folder</li>
+            <li>Example folder location for a default C drive install: C:\SierraChart\Data</li>
+            <li>In Sierra Chart, choose File &gt; Open Chartbook (or Ctrl+B) and select the Chartbook you wish to open</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ===== Chartbooks ===== -->
+      <section class="legacy-section" id="chartbooks">
+        <h2><span class="sec-accent">#</span> Chartbooks</h2>
+        <p><a href="https://github.com/gcUserStudies/sierrachart/raw/main/chartbooks/ES%20DOM.cht" download>ES DOM Chartbook</a></p>
+        <img class="chartbook-shot" src="https://github.com/gcUserStudies/sierrachart/raw/main/chartbooks/ES%20DOM.png" alt="ES DOM Chartbook preview" loading="lazy">
+      </section>
+
+      <!-- ===== About / disclaimer ===== -->
+      <section class="legacy-section" id="about">
+        <h2><span class="sec-accent">#</span> About</h2>
+        <p>The gcUserStudies custom studies are provided free of charge and "as is" without warranty of any kind, either expressed or implied, and are to be used at your own risk. They may contain errors and/or issues that I am unaware of. While I use some of these myself, you should first thoroughly back test in simulation mode before introducing any new studies into your trading environment. The source code is provided so you may examine it and determine for yourself whether it meets your needs. By downloading and installing you accept all liability for any results, positive or negative, that occur while using any of these studies. Thank you, and I hope you find them useful. The goal here is learning, sharing, and always improving. I am by no means an expert in Sierra Chart ACSIL programming; I am doing this for learning purposes and to help others. My design and code may not be the most optimal, and I will continue to improve these studies where I can.</p>
+      </section>
+
+      <!-- ===== References ===== -->
+      <section class="legacy-section" id="references">
+        <h2><span class="sec-accent">#</span> References</h2>
+        <p>Excellent ACSIL references:</p>
+        <ul>
+          <li><a href="https://github.com/korygill/technical-analysis" rel="noopener" target="_blank">Kory Gill - New Study Template</a></li>
+          <li><a href="https://github.com/FrozenTundraTrader/sierrachart" rel="noopener" target="_blank">Frozen Tundra - Sierra Chart GitHub repo</a></li>
+          <li><a href="https://scottedwards.tech/post/building-sierra-chart-custom-studies" rel="nofollow noopener" target="_blank">Scott Edwards - Building Sierra Chart Custom Studies</a></li>
+        </ul>
+      </section>
+
+      <!-- ===== Contact ===== -->
+      <section class="legacy-section" id="contact">
+        <h2><span class="sec-accent">#</span> Contact</h2>
+        <p><a href="https://twitter.com/gcUserStudies" rel="noopener" target="_blank">@gcUserStudies</a></p>
+      </section>
+
+      <!-- ===== Paid services ===== -->
+      <section class="legacy-section" id="paid">
+        <h2><span class="sec-accent">#</span> Paid services</h2>
+        <p>I do not, nor plan to, offer paid services or studies.<span class="footnote-marker">*</span> I do not have the capacity or the wish to provide the level of support such an endeavor requires (hats off to those who do). I have spent the bulk of my career in IT fixing all things broken and have no desire to do more of that. I have also found that one of my biggest trading edges is the act of not trading when I should not be, so focusing on helping people solve problems with studies keeps me engaged with the market while I wait for the right setups.</p>
+        <p>That said, if you are in the market for paid services, here are some I am aware of. This is not an endorsement; I get nothing for listing them, it just saves you a search:</p>
+        <ul>
+          <li><a href="https://forum.obchodni-indikatory.cz/" rel="nofollow noopener" target="_blank">Zyp's Studies</a></li>
+          <li><a href="https://orderflowlabs.com/" rel="nofollow noopener" target="_blank">OrderFlow Labs</a></li>
+          <li><a href="https://sierra.trading/" rel="nofollow noopener" target="_blank">Sierra Trading</a></li>
+          <li><a href="https://www.simplesystemtrading.com/" rel="nofollow noopener" target="_blank">Simple System Trading</a></li>
+          <li><a href="https://www.ticinotrader.ch/tag/sierrachart" rel="nofollow noopener" target="_blank">TicinoTrader</a></li>
+        </ul>
+        <p class="fine-print"><span class="footnote-marker">*</span> Full disclosure: I did take a real run at this once, offering custom studies as a paid service full time. The experiment did not pan out, which is how the studies that were briefly paid all landed here, free, on the <a href="index.html">Current studies</a> page.</p>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- ===== Shared footer ===== -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p class="risk">Trading futures and other instruments involves substantial risk of loss and is not suitable for everyone. Nothing on this site is financial advice.</p>
+      <nav class="footer-links">
+        <a href="about.html">About</a>
+        <a href="faq.html">FAQ</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+        <a href="disclaimer.html">Disclaimer</a>
+        <a href="https://buy.stripe.com/6oU3cw7A94Pzc1c6aFbQY00" target="_blank" rel="noopener">Contribute</a>
+      </nav>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copyright">&copy; 2026 gcUserStudies LLC. All rights reserved.</p>
+      <span class="social-links">
+        <a href="https://x.com/gcUserStudies" target="_blank" rel="noopener" aria-label="X"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+        <a href="https://www.youtube.com/@gcUserStudies" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12z"/></svg></a>
+      </span>
+    </div>
+  </footer>
+
+</body>
+</html>

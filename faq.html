@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FAQ - gcUserStudies</title>
+  <meta name="description" content="Install instructions, the unsigned-DLL note, and a few common questions.">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="stylesheet" href="styles.css?v=12">
+</head>
+<body class="theme-current">
+
+  <!-- ===== Shared header ===== -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand-legacy" href="legacy.html" title="Legacy / open source studies">
+        <img src="assets/legacy-guitar.jpg" alt="">
+        <span>Sierra Chart Studies</span>
+      </a>
+      <a class="brand-current" href="index.html" title="Current studies">
+        <img src="assets/gcuserstudies-logo.png" alt="gcUserStudies">
+      </a>
+    </div>
+    <nav class="site-nav">
+      <div class="nav-inner">
+        <a href="legacy.html" class="nav-link">Legacy / open source</a>
+        <a href="index.html" class="nav-link">Current studies</a>
+        <span class="social-links">
+          <a href="https://x.com/gcUserStudies" target="_blank" rel="noopener" aria-label="X"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+          <a href="https://www.youtube.com/@gcUserStudies" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12z"/></svg></a>
+        </span>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <div class="page-head">
+      <h1><span class="page-head-accent">FAQ</span></h1>
+    </div>
+    <div class="doc">
+
+      <p class="faq-q">What do I need to use these studies?</p>
+      <p>Sierra Chart running on Windows. The studies are Windows-only DLL files; macOS and Linux are not supported. As a rule, if your setup runs Sierra Chart comfortably today, it will run these.</p>
+
+      <p class="faq-q">How do I install a DLL in Sierra Chart?</p>
+      <ol>
+        <li>Download the DLL from the study card and copy it to your Sierra Chart "Data" folder. For a default install on the C drive, that is C:\SierraChart\Data.</li>
+        <li>In Sierra Chart, go to Analysis &gt; Studies (or press F6).</li>
+        <li>Choose Add Custom Study and select the study you want from the list.</li>
+        <li>If you are updating a study you already use, remove the old copy and re-add it so all new settings are refreshed.</li>
+      </ol>
+
+      <p class="faq-q">Do the studies update automatically?</p>
+      <p>No. Earlier versions used Sierra Chart's automatic distribution system, which has been removed. Downloads are manual now, so grab the DLL from the study card whenever you want the latest version. If you previously signed up on the old membership site and had your Sierra Chart ID set up for automatic updates, those studies will keep running the last version you received until you manually download and replace the files. Nothing updates on its own anymore.</p>
+
+      <p class="faq-q">What happened to my old account and the Sierra Chart username I signed up with?</p>
+      <p>There is no account or authorization anymore. The current studies are unlocked: no signup, no membership, and no Sierra Chart username required. Just download them and add them. The old membership site no longer takes new signups, and your Sierra Chart account is no longer set up to receive these studies automatically. The authorization was left in place on the old, locked DLLs only, so they keep working if you have not replaced them yet and nothing breaks during the transition. Once you swap in the new unlocked versions, no authorization is involved at all.</p>
+
+      <p class="faq-q">You collected my Sierra Chart username and email when I signed up. What happened to that data?</p>
+      <p>I deleted it. That information was only ever collected to authorize your studies through Sierra Chart's distribution system, which was handled automatically in the background. I never looked at it or used it for anything else, I did not share or sell it, and I am not sending mass emails about any of this. The one place a Sierra Chart username still exists is inside Sierra Chart's own distribution system, tied to the authorization on the old locked DLLs. Over the coming months I will retire those DLLs from Sierra Chart's system, which clears those usernames too. The current unlocked studies have no account, login, or stored data of any kind.</p>
+
+      <p class="faq-q">Which file do I download for my Sierra Chart version?</p>
+      <p>The download buttons give the current build. Sierra Chart studies are compiled per version, and the Sierra Chart version is in the filename (for example, a 2784 build). If the current build does not work on an older Sierra Chart version, <a href="https://github.com/gcUserStudies/gcuserstudies.com/releases" target="_blank" rel="noopener">browse all releases</a> and pick the file whose version matches yours.</p>
+
+      <p class="faq-q">I added the DLL but the study is not showing up.</p>
+      <p>Confirm the DLL is in your Sierra Chart "Data" folder, then restart Sierra Chart and give it a moment. Custom studies do not load in Safe Mode, so make sure Safe Mode is off (it is shown on the Sierra Chart login window). Then go to Analysis &gt; Studies &gt; Add Custom Study and look for the study in the list. If you are updating, remove the old copy and re-add it.</p>
+
+      <p class="faq-q">Do I need a compiler or development tools?</p>
+      <p>No. The current studies are pre-compiled DLLs; just download and add them. If you would rather build from source, the legacy open-source studies include their code on GitHub, but that is entirely optional.</p>
+
+      <p class="faq-q">Why does my browser or antivirus warn about the DLL?</p>
+      <p>The studies are unsigned DLL files, so Windows or your browser may warn that the file is potentially unsafe, and some antivirus engines occasionally flag them. This is a known false positive: Sierra Chart studies use standard Win32 APIs for drawing, hotkeys, and window management, and some AI-based heuristics misread those patterns. It is common across Sierra Chart study developers. You can scan any download yourself on <a href="https://www.virustotal.com/gui/home/url" rel="noopener" target="_blank">VirusTotal</a>, and the legacy collection links a VirusTotal report next to each version on the <a href="legacy.html">Legacy / open source</a> page.</p>
+
+      <p class="faq-q">Will these affect my performance?</p>
+      <p>They can, if your system is already near its limits. These studies add real-time calculation and drawing on top of Sierra Chart, so a modern CPU and enabling OpenGL (Global Settings &gt; Graphics Settings) help, especially with the DOM studies. If a study feels sluggish, try increasing its combine increment, turning off features you are not using, or running fewer instances. As a rule, if Sierra Chart runs comfortably today, these should too.</p>
+
+      <p class="faq-q">Is this maintained?</p>
+      <p>Best effort. Updates happen occasionally, as a hobby, when time allows. There is no guaranteed release schedule.</p>
+
+      <p class="faq-q">Can I get the source?</p>
+      <p>The legacy studies are open-source, with full source code linked from the <a href="legacy.html">Legacy / open source</a> page. The current studies (DOM Notes, Momentum Tails, Flow Gauges, and the Free bundle) are closed-source.</p>
+
+      <p class="faq-q">Are you affiliated with Sierra Chart?</p>
+      <p>No. gcUserStudies is an independent third-party developer. Sierra Chart is a separate product and company; these studies are built for the Sierra Chart platform but are not affiliated with or endorsed by them.</p>
+
+      <p class="faq-q">How do I get help?</p>
+      <p>This is a hobby project, so I cannot promise a response, but I read messages and help when I can. Email <a href="mailto:support@gcuserstudies.com">support@gcuserstudies.com</a> with your Sierra Chart version and a short description of what you are seeing.</p>
+
+    </div>
+  </main>
+
+  <!-- ===== Shared footer ===== -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p class="risk">Trading futures and other instruments involves substantial risk of loss and is not suitable for everyone. Nothing on this site is financial advice.</p>
+      <nav class="footer-links">
+        <a href="about.html">About</a>
+        <a href="faq.html">FAQ</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+        <a href="disclaimer.html">Disclaimer</a>
+        <a href="https://buy.stripe.com/6oU3cw7A94Pzc1c6aFbQY00" target="_blank" rel="noopener">Contribute</a>
+      </nav>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copyright">&copy; 2026 gcUserStudies LLC. All rights reserved.</p>
+      <span class="social-links">
+        <a href="https://x.com/gcUserStudies" target="_blank" rel="noopener" aria-label="X"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+        <a href="https://www.youtube.com/@gcUserStudies" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12z"/></svg></a>
+      </span>
+    </div>
+  </footer>
+
+</body>
+</html>

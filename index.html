@@ -1,0 +1,485 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Studies - gcUserStudies</title>
+  <meta name="description" content="Custom Sierra Chart studies for the DOM, chart, and trade workflow.">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="stylesheet" href="styles.css?v=12">
+</head>
+<body class="theme-current">
+
+  <!-- ===== Shared header ===== -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand-legacy" href="legacy.html" title="Legacy / open source studies">
+        <img src="assets/legacy-guitar.jpg" alt="">
+        <span>Sierra Chart Studies</span>
+      </a>
+      <a class="brand-current" href="index.html" title="Current studies">
+        <img src="assets/gcuserstudies-logo.png" alt="gcUserStudies">
+      </a>
+    </div>
+    <nav class="site-nav">
+      <div class="nav-inner">
+        <a href="legacy.html" class="nav-link">Legacy / open source</a>
+        <a href="index.html" class="nav-link is-active">Current studies</a>
+        <span class="social-links">
+          <a href="https://x.com/gcUserStudies" target="_blank" rel="noopener" aria-label="X"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+          <a href="https://www.youtube.com/@gcUserStudies" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12z"/></svg></a>
+        </span>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <div class="page-head">
+      <h1><span class="page-head-accent">Current</span> studies</h1>
+      <p>Custom Sierra Chart studies for the DOM, chart, and trade workflow. Click any card for its description, features, and screenshots.</p>
+    </div>
+
+    <!-- ===== Studies (individual DLLs) ===== -->
+    <h2 class="section-head">Studies</h2>
+    <div class="gc-gallery">
+
+      <!-- ---------- DOM Notes ---------- -->
+      <details class="gc-card" name="gc-studies">
+        <summary>
+          <div class="gc-card-thumb">
+            <img src="assets/studies/gcDOMNotes_01.png" alt="DOM Notes on a Sierra Chart DOM">
+          </div>
+          <div class="gc-card-bar">
+            <span class="gc-card-title">DOM Notes</span>
+            <a class="gc-dl" href="https://github.com/gcUserStudies/gcuserstudies.com/releases/latest/download/gcUserStudies_DOMNotes_64.dll" download>Download DLL <span class="dl-arrow">&#8595;</span></a>
+            <span class="gc-card-toggle"><span class="gc-card-arrow">&#9660;</span></span>
+          </div>
+        </summary>
+        <div class="gc-detail">
+          <div class="gc-detail-inner">
+            <div class="gc-detail-media">
+              <div class="gc-detail-screenshot">
+                <img src="assets/studies/gcDOMNotes_01.png" alt="DOM Notes price-anchored notes">
+              </div>
+            </div>
+            <div class="gc-detail-content">
+              <p class="gc-detail-desc">DOM Notes attaches persistent, price-anchored text notes to a Sierra Chart DOM or chart. Place a note at any price level, mark levels such as HOD, LOD, VAH, VAL, POC, and vPOC using preset styles or your own custom labels, and the notes are saved with the chartbook so they stay in place between sessions.</p>
+              <p class="gc-detail-features-heading">Features</p>
+              <ul class="gc-detail-features">
+                <li>Double-click a DOM column to add a note at that price</li>
+                <li>Drag notes to a new price level, with configurable collision behavior (overwrite, swap, or block)</li>
+                <li>12 style presets for HOD, LOD, VAH, VAL, POC, vPOC, Singles, and more</li>
+                <li>Modifier plus click an empty cell to place a preset note in one action</li>
+                <li>Customizable presets: names, colors, font styles, and alignment</li>
+                <li>Per-note overrides for bold, italic, strikeout, and alignment</li>
+                <li>Display in a DOM column (Label, GP1, GP2) or a standalone region column</li>
+                <li>Combine increment aware, auto-detects the DOM price scale</li>
+                <li>Notes persist with the chartbook</li>
+              </ul>
+              <p class="gc-detail-note">Notes are stored in the chartbook, which has a roughly 4KB limit. The study warns and blocks new notes once that is reached.</p>
+            </div>
+          </div>
+        </div>
+      </details>
+
+      <!-- ---------- Momentum Tails ---------- -->
+      <details class="gc-card" name="gc-studies">
+        <summary>
+          <div class="gc-card-thumb">
+            <img src="assets/studies/gcMomentumTails_01.png" alt="Momentum Tails on a Sierra Chart DOM">
+          </div>
+          <div class="gc-card-bar">
+            <span class="gc-card-title">Momentum Tails</span>
+            <a class="gc-dl" href="https://github.com/gcUserStudies/gcuserstudies.com/releases/latest/download/gcUserStudies_MomentumTails_64.dll" download>Download DLL <span class="dl-arrow">&#8595;</span></a>
+            <span class="gc-card-toggle"><span class="gc-card-arrow">&#9660;</span></span>
+          </div>
+        </summary>
+        <div class="gc-detail">
+          <div class="gc-detail-inner">
+            <div class="gc-detail-media">
+              <div class="gc-detail-screenshot">
+                <img src="assets/studies/gcMomentumTails_01.png" alt="Color-coded momentum tails on a DOM">
+              </div>
+              <div class="gc-detail-extra">
+                <img src="assets/studies/gcMomentumTails_Settings.png" alt="Momentum Tails settings window">
+                <img src="assets/studies/TailDeltaMeter_01.png" alt="HUD delta meter">
+              </div>
+            </div>
+            <div class="gc-detail-content">
+              <p class="gc-detail-desc">Momentum Tails shows where price has traded and how fast it moved, drawn directly on the DOM or Chart DOM. Each price touch lights up in the brightest tail color and fades through cooler levels over a configurable interval, producing a heat trail of momentum and activity. Optional layers add a delta or volume histogram, a cumulative delta readout, a HUD delta meter, and Big Print highlighting for outsized volume or delta imbalance.</p>
+              <p class="gc-detail-features-heading">Features</p>
+              <ul class="gc-detail-features">
+                <li>Color-coded fading tails with up to 10 customizable color levels</li>
+                <li>Color presets plus manual custom schemes</li>
+                <li>Volume display modes: active tail rows, full visible range, or hidden</li>
+                <li>Intermediate tails optionally fill levels between trades for a continuous trail</li>
+                <li>Split column mode showing Bid and Ask in one DOM column</li>
+                <li>Combine increment aware with auto-detect of the DOM price scale</li>
+                <li>Detection modes: Trade Volume Only or Bid/Ask Movement</li>
+                <li>Volume Calculation Mode: All Recent Volume or Tail Activity Only, which ignores stale volume that predates the tail</li>
+                <li>Big Print highlighting with Decay Timer, Until Revisited, and Both modes</li>
+                <li>Delta histogram with Delta, Delta Diagonal, and Volume modes</li>
+                <li>Cumulative delta display (Ask minus Bid)</li>
+                <li>HUD delta meter with gradient or segmented fill and peak indicators</li>
+                <li>Disable Tails to run Big Print, histogram, delta, or the HUD meter on their own</li>
+                <li>Right-click quick toggles for the HUD meter, delta display, and histogram, and to clear Big Print highlights</li>
+                <li>Tabbed settings window with dark and light themes, plus save, load, export, and import presets</li>
+                <li>Subgraph output for Delta, Min Delta, and Max Delta</li>
+              </ul>
+              <p class="gc-detail-note">Thanks to the beta testers whose feedback and suggestions helped shape many of these features.</p>
+            </div>
+          </div>
+        </div>
+      </details>
+
+      <!-- ---------- Flow Gauges ---------- -->
+      <details class="gc-card" name="gc-studies">
+        <summary>
+          <div class="gc-card-thumb">
+            <img src="assets/studies/gcFlowGauges_01.png" alt="Flow Gauges arc gauges">
+          </div>
+          <div class="gc-card-bar">
+            <span class="gc-card-title">Flow Gauges</span>
+            <a class="gc-dl" href="https://github.com/gcUserStudies/gcuserstudies.com/releases/latest/download/gcUserStudies_FlowGauges_64.dll" download>Download DLL <span class="dl-arrow">&#8595;</span></a>
+            <span class="gc-card-toggle"><span class="gc-card-arrow">&#9660;</span></span>
+          </div>
+        </summary>
+        <div class="gc-detail">
+          <div class="gc-detail-inner">
+            <div class="gc-detail-media">
+              <div class="gc-detail-screenshot">
+                <img src="assets/studies/gcFlowGauges_01.png" alt="Seven Flow Gauges types">
+              </div>
+              <div class="gc-detail-screenshot">
+                <img src="assets/studies/gcFlowGauges_ConfigWindow_01.png" alt="Flow Gauges settings window">
+              </div>
+            </div>
+            <div class="gc-detail-content">
+              <p class="gc-detail-desc">Flow Gauges is a set of floating arc gauges that turn per-bar order flow into a single visual read. Each of the seven gauge types runs as its own study and can be floated over any chart or DOM, embedded with a double-click, and freely resized. Unidirectional gauges fill from zero to the current value, bidirectional gauges fill in opposite directions for positive and negative values, and the dual gauge shows two values at once.</p>
+              <p class="gc-detail-features-heading">Features</p>
+              <ul class="gc-detail-features">
+                <li>Seven gauge types: Volume, Bid Volume, Ask Volume, Bid vs Ask Volume, CVD, Delta, and Tape</li>
+                <li>Float over any chart or DOM, or double-click to embed</li>
+                <li>Resizable, with text and arc thickness scaling proportionally</li>
+                <li>Anti-aliased arc rendering in floating mode</li>
+                <li>Auto Range that ratchets the gauge max up to the session high</li>
+                <li>Threshold markers and evenly spaced auto division marks</li>
+                <li>Auto color gradient for unidirectional gauges, positive and negative colors for bidirectional</li>
+                <li>Right-click quick toggles for Auto Range, flip, auto color, labels, and values</li>
+                <li>Subgraph output of each gauge value</li>
+                <li>Tabbed settings window with dark and light themes</li>
+                <li>Presets: save, load, export, and import per gauge type</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </details>
+
+    </div>
+
+    <!-- ===== Free bundle (one shared DLL) ===== -->
+    <div class="section-head-row">
+      <div>
+        <h2 class="section-head">Free bundle</h2>
+        <p class="section-sub">Eight smaller studies that ship together in a single DLL. Download it once and add the ones you want.</p>
+      </div>
+      <a class="gc-dl gc-dl-lg" href="https://github.com/gcUserStudies/gcuserstudies.com/releases/latest/download/gcUserStudies_Free_64.dll" download>Download Free bundle <span class="dl-arrow">&#8595;</span></a>
+    </div>
+    <div class="gc-gallery gc-gallery--bundle">
+
+      <!-- ---------- MBO Blocks ---------- -->
+      <details class="gc-card" name="gc-studies">
+        <summary>
+          <div class="gc-card-thumb">
+            <img src="assets/studies/gcMBOBlocks_Free_01.png" alt="MBO Blocks on a DOM">
+          </div>
+          <div class="gc-card-bar">
+            <span class="gc-card-title">MBO Blocks</span>            <span class="gc-card-toggle"><span class="gc-card-arrow">&#9660;</span></span>
+          </div>
+        </summary>
+        <div class="gc-detail">
+          <div class="gc-detail-inner">
+            <div class="gc-detail-media">
+              <div class="gc-detail-screenshot">
+                <img src="assets/studies/gcMBOBlocks_Free_01.png" alt="MBO Blocks color-coded limit orders">
+              </div>
+            </div>
+            <div class="gc-detail-content">
+              <p class="gc-detail-desc">MBO Blocks visualizes Market By Order data as color-coded blocks on your DOM or chart. Individual limit orders are stacked at each price level, sized proportionally and colored by quantity range, and the study tracks when orders change price or size. Requires Sierra Chart Service Package 12 (Integrated Advanced MBO) with Market by Order data. If blocks do not appear, see <a href="https://www.sierrachart.com/index.php?page=doc/MarketByOrder.php#StepByStepInstructions" target="_blank" rel="noopener">Troubleshooting MBO Data</a>.</p>
+              <p class="gc-detail-features-heading">Features</p>
+              <ul class="gc-detail-features">
+                <li>Render in DOM columns (GP1/GP2/Label) or as a virtual column on any chart or DOM</li>
+                <li>15 quantity filter tiers per side, with custom block and text colors</li>
+                <li>Front of Queue markers for Bid and Ask</li>
+                <li>Flexible scaling with multiple block scaling methods and a configurable scale factor</li>
+                <li>Combine increment aware, auto-detects your DOM grouping</li>
+                <li>Minimum size filter to hide small orders and reduce noise</li>
+                <li>Works on charts and DOMs, auto-detecting the window type and adapting the layout</li>
+                <li>Order tracking marks orders that change price or size</li>
+                <li>History tails plus a hover or pin snapshot window showing an order's movement trail</li>
+              </ul>
+              <p class="gc-detail-note">Acknowledgment: the original concept of visualizing MBO orders as colored blocks was inspired by <a href="https://motivewave.com/" target="_blank" rel="noopener">MotiveWave</a>, brought to my attention by <a href="https://x.com/ZigsOnTheBid" target="_blank" rel="noopener">ZigsOnTheBid</a> in the <a href="https://discord.com/servers/sierra-charts-community-847128947694895144" target="_blank" rel="noopener">Sierra Chart Discord</a>. It has since evolved with original features; the original text-only version is on <a href="https://github.com/gcUserStudies/sierrachart" target="_blank" rel="noopener">GitHub</a>.</p>            </div>
+          </div>
+        </div>
+      </details>
+
+      <!-- ---------- Trade Bracket Preview ---------- -->
+      <details class="gc-card" name="gc-studies">
+        <summary>
+          <div class="gc-card-thumb">
+            <img src="assets/studies/gcTradeBracketPreview_Free_01.png" alt="Trade Bracket Preview lines">
+          </div>
+          <div class="gc-card-bar">
+            <span class="gc-card-title">Trade Bracket Preview</span>            <span class="gc-card-toggle"><span class="gc-card-arrow">&#9660;</span></span>
+          </div>
+        </summary>
+        <div class="gc-detail">
+          <div class="gc-detail-inner">
+            <div class="gc-detail-media">
+              <div class="gc-detail-screenshot">
+                <img src="assets/studies/gcTradeBracketPreview_Free_01.png" alt="Bracket entry, stop, and target preview">
+              </div>
+            </div>
+            <div class="gc-detail-content">
+              <p class="gc-detail-desc">Trade Bracket Preview shows your bracket orders before you place them. It draws labeled entry, stop, and target lines at the hovered price based on your active Trade Window settings, and works on both Chart and DOM.</p>
+              <p class="gc-detail-features-heading">Features</p>
+              <ul class="gc-detail-features">
+                <li>Live entry, stop, and target lines from your Trade Window</li>
+                <li>Match Sierra Chart order line colors or use custom colors</li>
+                <li>Above or below market warning and Trade Lock warning</li>
+                <li>Quick Trade Window config switching via a popup menu</li>
+                <li>DOM direction detection (Buy column long, Sell column short)</li>
+                <li>Chart direction modes: Auto-Flip, Fixed Long, Fixed Short, Separate Keys</li>
+                <li>Auto-hide when a position is open</li>
+              </ul>            </div>
+          </div>
+        </div>
+      </details>
+
+      <!-- ---------- Fair Value Gap ---------- -->
+      <details class="gc-card" name="gc-studies">
+        <summary>
+          <div class="gc-card-thumb">
+            <img src="assets/studies/gcFVG_Free_01.png" alt="Fair Value Gaps on a chart">
+          </div>
+          <div class="gc-card-bar">
+            <span class="gc-card-title">Fair Value Gap</span>            <span class="gc-card-toggle"><span class="gc-card-arrow">&#9660;</span></span>
+          </div>
+        </summary>
+        <div class="gc-detail">
+          <div class="gc-detail-inner">
+            <div class="gc-detail-media">
+              <div class="gc-detail-screenshot">
+                <img src="assets/studies/gcFVG_Free_01.png" alt="Fair Value Gap boxes">
+              </div>
+            </div>
+            <div class="gc-detail-content">
+              <p class="gc-detail-desc">Fair Value Gap identifies and draws Fair Value Gaps, the three-bar price pattern where a strong move leaves a gap between the first and third bar wicks.</p>
+              <p class="gc-detail-features-heading">Features</p>
+              <ul class="gc-detail-features">
+                <li>Independent settings for up and down gaps</li>
+                <li>Configurable line style, width, color, fill color, and transparency</li>
+                <li>Extend right: None, Last Bar, or Chart Edge</li>
+                <li>Auto-hide when a gap is filled, with optional midline</li>
+                <li>Minimum gap size filter and bar lookback limit</li>
+                <li>Optional external study filter to qualify which candles produce gaps</li>
+                <li>Subgraph outputs tracking high and low for up to 14 active gaps</li>
+              </ul>            </div>
+          </div>
+        </div>
+      </details>
+
+      <!-- ---------- Forex Factory Events ---------- -->
+      <details class="gc-card" name="gc-studies">
+        <summary>
+          <div class="gc-card-thumb">
+            <img src="assets/studies/gcForexFactory_Free_01.png" alt="Forex Factory events on a chart">
+          </div>
+          <div class="gc-card-bar">
+            <span class="gc-card-title">Forex Factory Events</span>            <span class="gc-card-toggle"><span class="gc-card-arrow">&#9660;</span></span>
+          </div>
+        </summary>
+        <div class="gc-detail">
+          <div class="gc-detail-inner">
+            <div class="gc-detail-media">
+              <div class="gc-detail-screenshot">
+                <img src="assets/studies/gcForexFactory_Free_01.png" alt="Economic events list on a chart">
+              </div>
+            </div>
+            <div class="gc-detail-content">
+              <p class="gc-detail-desc">Forex Factory Events downloads the week's economic events from Forex Factory and displays them on your chart, so scheduled releases are visible alongside price.</p>
+              <p class="gc-detail-features-heading">Features</p>
+              <ul class="gc-detail-features">
+                <li>Filter by currency and by impact level</li>
+                <li>Independent styling for past, upcoming, and current events</li>
+                <li>am/pm or 24-hour time, with optional Forecast and Previous values</li>
+                <li>Adjustable font size, event spacing, and position offsets</li>
+                <li>Hide past events, optionally show tomorrow's events</li>
+                <li>Subgraph candle coloring before and at event time for Sierra Chart alerts</li>
+                <li>Configurable update and retry intervals</li>
+              </ul>            </div>
+          </div>
+        </div>
+      </details>
+
+      <!-- ---------- Chart DOM Auto X Hair ---------- -->
+      <details class="gc-card" name="gc-studies">
+        <summary>
+          <div class="gc-card-thumb">
+            <img src="assets/studies/gcChartDOMAutoXHair_Free_01.png" alt="Chart DOM auto crosshair">
+          </div>
+          <div class="gc-card-bar">
+            <span class="gc-card-title">Chart DOM Auto X Hair</span>            <span class="gc-card-toggle"><span class="gc-card-arrow">&#9660;</span></span>
+          </div>
+        </summary>
+        <div class="gc-detail">
+          <div class="gc-detail-inner">
+            <div class="gc-detail-media">
+              <div class="gc-detail-screenshot">
+                <img src="assets/studies/gcChartDOMAutoXHair_Free_01.png" alt="Crosshair and order preview on a Chart DOM">
+              </div>
+            </div>
+            <div class="gc-detail-content">
+              <p class="gc-detail-desc">Chart DOM Auto X Hair draws a cross hair across the chart when you hover over Chart DOM columns. An order preview label shows the order that would be placed at the hovered price, including direction and quantity, with optional Trade Lock status.</p>
+              <p class="gc-detail-features-heading">Features</p>
+              <ul class="gc-detail-features">
+                <li>Cross hair across the chart when hovering Chart DOM columns</li>
+                <li>Order preview label showing direction and quantity at the hovered price</li>
+                <li>Optional Trade Lock status display</li>
+              </ul>            </div>
+          </div>
+        </div>
+      </details>
+
+      <!-- ---------- DOM Graph ---------- -->
+      <details class="gc-card" name="gc-studies">
+        <summary>
+          <div class="gc-card-thumb">
+            <img src="assets/studies/gcDOMGraph_Free_01.png" alt="DOM depth graph">
+          </div>
+          <div class="gc-card-bar">
+            <span class="gc-card-title">DOM Graph</span>            <span class="gc-card-toggle"><span class="gc-card-arrow">&#9660;</span></span>
+          </div>
+        </summary>
+        <div class="gc-detail">
+          <div class="gc-detail-inner">
+            <div class="gc-detail-media">
+              <div class="gc-detail-screenshot">
+                <img src="assets/studies/gcDOMGraph_Free_01.png" alt="DOM depth graph with independent depth">
+              </div>
+            </div>
+            <div class="gc-detail-content">
+              <p class="gc-detail-desc">DOM Graph is a depth graph that controls its own depth level. Sierra Chart's built-in DOM graph is tied to the chart's Market Depth setting, so limiting it limits depth for every study. This study lets you keep full depth on the chart for other studies while independently controlling how many levels the graph displays.</p>
+              <p class="gc-detail-features-heading">Features</p>
+              <ul class="gc-detail-features">
+                <li>Configurable maximum depth levels, independent of the chart Market Depth setting</li>
+                <li>Bid and ask bar colors with gradient blending</li>
+                <li>Adjustable bar width and line thickness</li>
+                <li>Show or hide volume numbers, totals, percentages, spread, and bid/ask prices</li>
+                <li>Highlight the level with the greatest volume</li>
+                <li>Font source: Chart Text or DOM Quantities</li>
+                <li>Horizontal offset for positioning</li>
+              </ul>            </div>
+          </div>
+        </div>
+      </details>
+
+      <!-- ---------- Auto Clear Bid/Ask Volume ---------- -->
+      <details class="gc-card" name="gc-studies">
+        <summary>
+          <div class="gc-card-thumb">
+            <img src="assets/studies/gcAutoClearRecentBidAskPS_Free_01.png" alt="Auto Clear Bid/Ask Volume settings">
+          </div>
+          <div class="gc-card-bar">
+            <span class="gc-card-title">Auto Clear Bid/Ask Volume</span>            <span class="gc-card-toggle"><span class="gc-card-arrow">&#9660;</span></span>
+          </div>
+        </summary>
+        <div class="gc-detail">
+          <div class="gc-detail-inner">
+            <div class="gc-detail-media">
+              <div class="gc-detail-screenshot">
+                <img src="assets/studies/gcAutoClearRecentBidAskPS_Free_01.png" alt="Auto Clear session configuration">
+              </div>
+            </div>
+            <div class="gc-detail-content">
+              <p class="gc-detail-desc">Auto Clear Bid/Ask Volume automatically clears DOM volume and order flow data on a schedule or when new bars form. It handles three independent data types: Recent Bid/Ask Volume, Current Traded Volume, and Pulling/Stacking data.</p>
+              <p class="gc-detail-features-heading">Features</p>
+              <ul class="gc-detail-features">
+                <li>Six configurable session times</li>
+                <li>Per-session control over which data types to clear</li>
+                <li>Sessions 1 and 2 default to your Regular and Evening session start times</li>
+                <li>Optionally clear selected data types on each new bar</li>
+                <li>Detects timeframe changes and chart reloads to avoid false triggers</li>
+                <li>Clearing Pulling/Stacking data affects all charts in the instance</li>
+              </ul>            </div>
+          </div>
+        </div>
+      </details>
+
+      <!-- ---------- Auto Update Order Quantity ---------- -->
+      <details class="gc-card" name="gc-studies">
+        <summary>
+          <div class="gc-card-thumb">
+            <img src="assets/studies/gcAutoUpdateOrderQty_Free_01.png" alt="Auto Update Order Quantity">
+          </div>
+          <div class="gc-card-bar">
+            <span class="gc-card-title">Auto Update Order Quantity</span>            <span class="gc-card-toggle"><span class="gc-card-arrow">&#9660;</span></span>
+          </div>
+        </summary>
+        <div class="gc-detail">
+          <div class="gc-detail-inner">
+            <div class="gc-detail-media">
+              <div class="gc-detail-screenshot">
+                <img src="assets/studies/gcAutoUpdateOrderQty_Free_01.png" alt="Auto Update Order Quantity with virtual stop line">
+              </div>
+            </div>
+            <div class="gc-detail-content">
+              <p class="gc-detail-desc">Auto Update Order Quantity updates the Trade Window order quantity based on whether you are flat or in a position. It only changes the quantity value and does not submit, block, or manage orders.</p>
+              <p class="gc-detail-features-heading">Features</p>
+              <ul class="gc-detail-features">
+                <li>Separate order quantities for flat and in-position states</li>
+                <li>Scale out by percentage with configurable rounding</li>
+                <li>Applies to all manual buy and sell orders</li>
+                <li>Optional Virtual Stop Line drawn at a configurable tick offset from entry</li>
+                <li>Configurable Virtual Stop Line color, width, style, length, and price label</li>
+                <li>The Virtual Stop Line is a visual reference only, not a real stop order</li>
+              </ul>            </div>
+          </div>
+        </div>
+      </details>
+
+    </div>
+
+    <p class="versions-note">The download buttons give the current build. Want everything at once? <a href="https://github.com/gcUserStudies/gcuserstudies.com/releases/latest/download/gcUserStudies_ALL.zip" download>Download all studies (zip)</a>. Need an older or version-specific Sierra Chart build? <a href="https://github.com/gcUserStudies/gcuserstudies.com/releases" target="_blank" rel="noopener">Browse all releases</a>.</p>
+
+    <!-- ===== As-is disclaimer ===== -->
+    <div class="disclaimer">
+      <p>These studies are shared as-is, as a best-effort hobby project. They come with no guarantee of compatibility with current or future Sierra Chart versions, and no obligation of support. Test any study in simulation before using it in a live trading environment. If you would like to support the project, you can <a href="https://buy.stripe.com/6oU3cw7A94Pzc1c6aFbQY00" target="_blank" rel="noopener">contribute here</a>.</p>
+    </div>
+  </main>
+
+  <!-- ===== Shared footer ===== -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p class="risk">Trading futures and other instruments involves substantial risk of loss and is not suitable for everyone. Nothing on this site is financial advice.</p>
+      <nav class="footer-links">
+        <a href="about.html">About</a>
+        <a href="faq.html">FAQ</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+        <a href="disclaimer.html">Disclaimer</a>
+        <a href="https://buy.stripe.com/6oU3cw7A94Pzc1c6aFbQY00" target="_blank" rel="noopener">Contribute</a>
+      </nav>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copyright">&copy; 2026 gcUserStudies LLC. All rights reserved.</p>
+      <span class="social-links">
+        <a href="https://x.com/gcUserStudies" target="_blank" rel="noopener" aria-label="X"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+        <a href="https://www.youtube.com/@gcUserStudies" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12z"/></svg></a>
+      </span>
+    </div>
+  </footer>
+
+  <script src="gallery.js" defer></script>
+</body>
+</html>
